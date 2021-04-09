@@ -21,6 +21,7 @@
   h1,
   p {
     margin: 0 auto;
+    text-align: center;
   }
 
   h1 {

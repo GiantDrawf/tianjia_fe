@@ -38,6 +38,12 @@ export default {
           dev,
           hydratable: true,
         },
+        onwarn: (warning, handler) => {
+          const { code } = warning;
+          if (code === 'css-unused-selector') return;
+
+          handler(warning);
+        },
       }),
       url({
         sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
