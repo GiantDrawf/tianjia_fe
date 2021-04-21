@@ -12,7 +12,7 @@
   };
 </script>
 
-<header class="text-black body-font shadow mb-1 sticky top-0 z-50 bg-white">
+<header class="text-black body-font shadow sticky top-0 z-50 bg-white">
   <div
     class="hidden md:flex container mx-auto flex-nowrap h-20 flex-row items-center"
   >
@@ -28,21 +28,25 @@
           class="{segment === menu.url
             ? 'bg-gray-900 text-gray-100'
             : 'text-gray-800'} px-2 py-2 text-sm rounded-md dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 hover:font-medium md:mx-2 menu-item relative"
-          href={menu.url}
+          href={menu.redirectUrl || menu.url}
           rel="prefetch"
           >{menu.text}
           {#if menu.children}
             <div
-              class="hidden absolute z-10 -left-1/2 mt-3 top-full w-36 bg-white rounded-lg border border-gray-100 shadow-2xl flex-col flex-nowrap text-center divide-y divide-gray-200 menu-child"
+              class="hidden absolute z-10 -left-1/2 mt-3 top-full w-36 rounded-lg border border-gray-100 shadow-2xl menu-child"
             >
-              {#each menu.children as child}
-                <a
-                  href={`${menu.url}/${child.url}`}
-                  rel="prefetch"
-                  class="py-2 text-black hover:text-white hover:bg-gray-900"
-                  >{child.text}</a
-                >
-              {/each}
+              <div
+                class="w-full flex bg-white flex-col flex-nowrap text-center divide-y divide-gray-200 rounded-lg overflow-hidden"
+              >
+                {#each menu.children as child}
+                  <a
+                    href={`${menu.url}/${child.url}`}
+                    rel="prefetch"
+                    class="py-2 text-black hover:text-white hover:bg-gray-900"
+                    >{child.text}</a
+                  >
+                {/each}
+              </div>
             </div>
           {/if}
         </a>
@@ -59,6 +63,27 @@
     <a href="." class="flex title-font font-medium items-center">
       <img class="h-8 w-8" src="images/favicon.png" alt="天佳空调" />
       <span class="ml-3 text-xl text-black">天佳空调</span>
+    </a>
+    <a href="contactus" class="mr-2">联系我们</a>
+    <a
+      href="tel:13921745084"
+      type="button"
+      class="fixed z-50 bottom-40 right-4 w-16 h-16 rounded-full bg-gray-500 text-white block"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 absolute top-1/2 left-1/2 -mt-3 -ml-3"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+        />
+      </svg>
     </a>
     <button
       type="button"
@@ -108,7 +133,7 @@
           {#each menus as menu}
             <li class="mb-8">
               <a
-                href={menu.url}
+                href={menu.redirectUrl || menu.url}
                 class="h-full w-full inline-block mb-3 font-semibold text-sm text-gray-900"
                 >{menu.text}</a
               >
@@ -135,7 +160,7 @@
 
 <style>
   .menu-item:hover .menu-child {
-    display: flex;
+    display: block;
   }
 
   .menu-child::before,

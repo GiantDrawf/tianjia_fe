@@ -10,7 +10,7 @@
 
 <Nav {segment} />
 
-<main class="relative max-w-4xl bg-white p-8 mx-auto box-border">
+<main class="relative bg-white box-border">
   <slot />
 </main>
 

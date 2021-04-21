@@ -51,13 +51,15 @@
   <title>{title}-天佳空调-风机箱-组合式空调箱</title>
 </svelte:head>
 
-{#if error}
-  <div>啊哦，出错了</div>
-{:else}
-  <div class="leading-loose w-full articleContent prose-xl">
-    {@html article.content}
-  </div>
-{/if}
+<div class="max-w-4xl p-8 mx-auto">
+  {#if error}
+    <div>啊哦，出错了</div>
+  {:else}
+    <div class="leading-loose w-full articleContent prose-xl">
+      {@html article.content}
+    </div>
+  {/if}
+</div>
 
 <style>
   :global(.articleContent img) {

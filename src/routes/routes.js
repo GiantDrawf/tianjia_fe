@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2021-04-08 14:43:44
  * @LastEditors: zhujian
- * @LastEditTime: 2021-04-09 17:04:56
+ * @LastEditTime: 2021-04-20 15:19:28
  * @Description: 路由管理
  */
 export default [
@@ -58,6 +58,7 @@ export default [
   },
   {
     url: 'successes',
+    redirectUrl: 'successes/business',
     text: '成功案例',
     children: [
       {

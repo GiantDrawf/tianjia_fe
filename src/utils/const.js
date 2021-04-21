@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2021-04-08 17:25:00
  * @LastEditors: zhujian
- * @LastEditTime: 2021-04-08 18:15:45
+ * @LastEditTime: 2021-04-21 17:33:46
  * @Description: 你 kin 你擦
  */
 const env = process.env.NODE_ENV;
@@ -10,6 +10,39 @@ const isDev = env === 'development';
 
 // 页面路由管理
 const pageModuleMap = {
+  home: {
+    // 幻灯模块
+    swiper: isDev ? 'i9dfk8qwhyp' : 't0binczn0bh',
+    // 天佳心选模块
+    tjSelected: isDev ? 'pjr21no95e' : 'pkxatosvbzb',
+    // 品牌故事文章id
+    brandStoryAid: isDev
+      ? '73d05e7a-448a-443b-b968-9b11fd8cd955'
+      : 'b5123f0f-852e-4c3a-ad75-af7b3dabf7b3',
+    // 品牌故事标语
+    brandStorySlogan: [
+      {
+        icon: 'flag',
+        txt: '追求完美创造卓越',
+      },
+      {
+        icon: 'globe',
+        txt: '倡导节约低碳理念',
+      },
+      {
+        icon: 'chartPie',
+        txt: '全面高效管理系统',
+      },
+      {
+        icon: 'chip',
+        txt: '自主创新联动技术',
+      },
+    ],
+    // 商业案例
+    businessCase: isDev ? '9qyoai7w0jp' : 'tpbttao0wao',
+    // 品牌资讯
+    brandInfo: isDev ? 'p8uot90rkhg' : '0l1i829vhd59',
+  },
   // 关于天佳模块
   about: {
     aId: isDev
