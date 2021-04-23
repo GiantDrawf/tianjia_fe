@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2021-04-08 14:43:44
  * @LastEditors: zhujian
- * @LastEditTime: 2021-04-20 15:19:28
+ * @LastEditTime: 2021-04-23 14:11:37
  * @Description: 路由管理
  */
 export default [
@@ -76,10 +76,6 @@ export default [
     ],
   },
   {
-    url: 'serviceCenter',
-    text: '服务中心',
-  },
-  {
     url: 'recruit',
     text: '招聘信息',
     children: [
@@ -96,5 +92,9 @@ export default [
         text: '实习岗位',
       },
     ],
+  },
+  {
+    url: 'serviceCenter',
+    text: '服务中心',
   },
 ];

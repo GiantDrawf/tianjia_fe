@@ -2,9 +2,9 @@
   import menus from '../routes/routes.js';
 </script>
 
-<footer class="text-gray-600">
+<footer class="bg-gray-100">
   <div
-    class="p-10 bg-gray-100 flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-nowrap flex-col"
+    class="py-10 mx-auto max-w-7xl flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-nowrap flex-col"
   >
     <div class="w-50 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
       <a
@@ -25,7 +25,7 @@
       class="flex-grow flex flex-wrap md:pl-10 -mb-10 md:mt-0 mt-10 md:text-left text-center overflow-hidden"
     >
       {#each menus as menu}
-        <div class="lg:w-1/{menus.length} md:w-1/3 w-full px-4">
+        <div class="lg:w-1/{menus.length} md:w-1/3 w-1/2 text-center">
           <h2
             class="title-font font-medium text-gray-900 tracking-widest text-base mb-3 hover:text-blue-600"
           >

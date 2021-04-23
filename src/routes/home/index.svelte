@@ -6,6 +6,7 @@
   import CONST from '../../utils/const';
   import ImportSvg from '../../components/ImportSvg.svelte';
   import TimeLine from '../../components/TimeLine.svelte';
+  import NewsStream from '../../components/NewsStream.svelte';
   let slides = [];
   let tjSelected;
   let brandStory;
@@ -119,7 +120,7 @@
         <div
           class="flex flex-row px-8 justify-between items-center h-28 rounded-xl bg-white shadow-md overflow-hidden cursor-pointer hover:shadow-lg"
         >
-          <ImportSvg svgName={itemSlogan.icon} height={10} width={10} />
+          <ImportSvg svgName={itemSlogan.icon} />
           <p class="flex-1 text-center text-base">{itemSlogan.txt}</p>
         </div>
       {/each}
@@ -150,59 +151,12 @@
 {#if brandInfos && brandInfos.length}
   <div class="my-10 max-w-full px-4 lg:px-0 md:max-w-5xl mx-auto">
     <ModuleName moduleName="品牌资讯" />
-    <div
-      class="grid grid-cols-1 gap-x-10 mt-4 grid-rows-{brandInfos.length} lg:grid-cols-2 lg:grid-rows-{brandInfos.length -
-        1}"
-    >
-      {#each brandInfos as itemBrandInfo, index}
-        <a
-          href="."
-          class="{index === 0
-            ? `lg:col-span-1 lg:row-span-${brandInfos.length - 1}`
-            : ''} col-span-1 row-span-1 w-full h-full flex flex-col justify-between itemBrandInfo"
-        >
-          {#if index === 0}
-            <div class="w-full h-auto hidden lg:block overflow-hidden">
-              <img
-                src={itemBrandInfo.thumbnail}
-                alt={itemBrandInfo.title}
-                class="w-full transition duration-1000 mb-10 "
-              />
-            </div>
-          {/if}
-          <div
-            class="flex-1 mb-4 relative border-b-4 border-gray-200 flex flex-col justify-between"
-          >
-            <h2 class="text-base mb-1 lg:text-2xl font-semibold">
-              {itemBrandInfo.title}
-            </h2>
-            <p
-              class="text-xs lg:text-base leading-5 lg:leading-7 mb-4 lg:mb-6 overflow-ellipsis overflow-hidden"
-              style="display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;"
-            >
-              {itemBrandInfo.summary}
-            </p>
-            <div
-              class="border-b-4 border-blue-900  absolute left-0 -bottom-1 blueLine w-1/6 transition-all duration-500"
-            />
-          </div>
-        </a>
-      {/each}
-    </div>
+    <NewsStream news={brandInfos} />
   </div>
 {/if}
 
 <style>
   :global(.itemTJSelect:hover img) {
-    transform: scale(1.1);
-  }
-  :global(.itemBrandInfo:hover .blueLine) {
-    width: 100%;
-  }
-  :global(.itemBrandInfo:hover h2, .itemBrandInfo:hover p) {
-    color: rgba(30, 58, 138, 0.9);
-  }
-  :global(.itemBrandInfo:hover img) {
     transform: scale(1.1);
   }
 </style>

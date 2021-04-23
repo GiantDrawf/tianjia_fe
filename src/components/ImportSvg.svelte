@@ -1,14 +1,12 @@
 <script>
   export let svgName;
-  export let height = 5;
-  export let width = 5;
   export let svgColor = 'text-gray-800';
 </script>
 
 {#if svgName}
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="h-{height} w-{width} {svgColor}"
+    class="h-10 w-10 {svgColor}"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"

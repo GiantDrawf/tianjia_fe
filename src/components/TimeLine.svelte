@@ -10,7 +10,7 @@
     {#each data as itemCase, index}
       <a
         href="."
-        class="flex flex-row items-center {index % 2 === 0
+        class="flex flex-row items-center mb-4 md:mb-0 {index % 2 === 0
           ? 'md:flex-row-reverse md:ml-4'
           : 'md:-ml-4'}"
       >
