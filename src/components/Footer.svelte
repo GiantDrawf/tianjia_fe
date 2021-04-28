@@ -52,9 +52,6 @@
     class="h-16 bg-black text-white px-6 items-center flex flex-row justify-between text-sm"
   >
     <span>天佳空调 版权所有</span>
-    <span
-      >Copyright © {new Date().getFullYear()} Taixing Tianjia Air Conditioning Co.,
-      Ltd.</span
-    >
+    <span>Copyright © {new Date().getFullYear()} Tianjia Co., Ltd.</span>
   </div>
 </footer>
