@@ -45,21 +45,23 @@
   export let title;
   export let article;
   export let error;
+  import Container from '../../components/Container.svelte';
+  import Error from '../../components/Error.svelte';
 </script>
 
 <svelte:head>
   <title>{title}-天佳空调-风机箱-组合式空调箱</title>
 </svelte:head>
 
-<div class="max-w-4xl p-8 mx-auto">
+<Container>
   {#if error}
-    <div>啊哦，出错了</div>
+    <Error />
   {:else}
     <div class="leading-loose w-full articleContent prose-xl">
       {@html article.content}
     </div>
   {/if}
-</div>
+</Container>
 
 <style>
   :global(.articleContent img) {

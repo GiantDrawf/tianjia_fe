@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2021-04-13 15:33:59
  * @LastEditors: zhujian
- * @LastEditTime: 2021-04-20 17:59:53
+ * @LastEditTime: 2021-05-28 09:37:32
  * @Description: 你 kin 你擦
  */
 import request from '../utils/request';
@@ -32,5 +32,27 @@ export const getModuleData = ({ mid, showLimit = 0, needAContent = 0 }) =>
 export const getArticleData = (aid) =>
   request(`${CONST.apiPath}/common/article/getDetail`, {
     data: { aid },
+    cache: false,
+  });
+
+/**
+ * 浏览文章
+ * @param {String} aid aid
+ * @returns
+ */
+export const browseArticle = (aid) =>
+  request(`${CONST.apiPath}/h5/article/browseArticle`, {
+    data: { aid },
+    cache: false,
+  });
+
+/**
+ * 获取热门文章
+ * @param {Number} limit 返回条数
+ * @returns
+ */
+export const getHotArticles = (limit = 10) =>
+  request(`${CONST.apiPath}/h5/article/getHotArticles`, {
+    data: { limit },
     cache: false,
   });

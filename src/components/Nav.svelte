@@ -52,10 +52,11 @@
         </a>
       {/each}
     </nav>
-    <button
+    <a
+      href="contactus"
       class="text-white inline-flex items-center bg-gray-600 border-0 py-1 px-3 focus:outline-none hover:bg-gray-900 rounded text-base focus:bg-gray-600 transition ease-in-out duration-300 transform hover:scale-110"
       >联系我们
-    </button>
+    </a>
   </div>
   <div
     class="flex md:hidden h-12 bg-gray-100 flex-row flex-nowrap px-2 justify-between items-center"

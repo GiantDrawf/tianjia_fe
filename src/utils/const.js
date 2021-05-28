@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2021-04-08 17:25:00
  * @LastEditors: zhujian
- * @LastEditTime: 2021-04-21 17:33:46
+ * @LastEditTime: 2021-05-28 16:30:56
  * @Description: 你 kin 你擦
  */
 const env = process.env.NODE_ENV;
@@ -70,4 +70,22 @@ const pageModuleMap = {
 
 const apiPath = isDev ? 'http://localhost:7001' : 'https://api.tianjia.live';
 
-export default { pageModuleMap, apiPath };
+const companyInfoMap = [
+  {
+    name: '电话',
+    value: '13921745084',
+    icon: 'images/Phone-icon.png',
+  },
+  {
+    name: '邮箱',
+    value: 'tianjiakongtiao@yeah.net',
+    icon: 'images/print.png',
+  },
+  {
+    name: '地址',
+    value: '江苏省泰兴市华泰大厦8楼',
+    icon: 'images/address.png',
+  },
+];
+
+export default { pageModuleMap, apiPath, companyInfoMap };

@@ -77,7 +77,7 @@
         {#if tjSelected.moduleContent && tjSelected.moduleContent.length}
           {#each tjSelected.moduleContent as itemSelected, index (itemSelected.aid)}
             <a
-              href="."
+              href="article/{itemSelected.aid}"
               class="{index === 0
                 ? 'md:col-span-2 md:row-span-2'
                 : ''} col-span-1 row-span-1 w-full h-full rounded-md flex flex-col items-center pb-2 md:pb-4 itemTJSelect overflow-hidden transition-all duration-300 hover:shadow-2xl bg-gray-100 hover:bg-gray-200"

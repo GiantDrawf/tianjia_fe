@@ -7,7 +7,7 @@
 >
   {#each news as itemNewsInfo, index}
     <a
-      href="."
+      href="article/{itemNewsInfo.aid}"
       class="{index === 0
         ? `lg:row-span-3`
         : ''} col-span-1 row-span-1 w-full h-full flex flex-col justify-between itemNewsInfo"
