@@ -36,7 +36,7 @@
   >
     {#each slides as itemSlide}
       <svelte:component this={SwiperSlideComponent} class="w-full h-full">
-        <a href="article/{itemSlide.aid}">
+        <a href="/article?aid={itemSlide.aid}">
           <div
             class="w-full h-full bg-center bg-no-repeat bg-cover relative"
             style="background-image: url({itemSlide.thumbnail});"

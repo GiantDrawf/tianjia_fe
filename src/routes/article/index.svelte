@@ -2,13 +2,23 @@
   import CONST from '../../utils/const.js';
   // 获取页面数据，包括标题和文章数据
   export async function preload(page) {
-    const { path } = page;
+    const { path, query } = page;
+    console.log(page);
+
     // 设置标题
     let title = '江苏净化洁净中央空调厂家';
     let article = {};
     let error = false;
 
-    const aid = path.split('/')[path.split('/').length - 1];
+    const aid = query.aid;
+    // 没有aid直接报错
+    if (!aid) {
+      return {
+        title,
+        article,
+        error: true,
+      };
+    }
     const res = await this.fetch(
       `${CONST.apiPath}/common/article/getDetail?aid=${aid}`
     );
@@ -93,7 +103,10 @@
       {#if hotArticles.length}
         <SideModule moduleName="热门文章">
           {#each hotArticles as itemArticle}
-            <a href="article/{itemArticle.aid}" class="block overflow-hidden">
+            <a
+              href="/article?aid={itemArticle.aid}"
+              class="block overflow-hidden"
+            >
               <div
                 class="flex flex-row my-2 text-gray-500 hover:text-black cursor-pointer"
               >
