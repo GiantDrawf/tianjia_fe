@@ -40,7 +40,7 @@
               >
                 {#each menu.children as child}
                   <a
-                    href={`${menu.url}/${child.url}`}
+                    href={child.redirectUrl || `${menu.url}/${child.url}`}
                     rel="prefetch"
                     class="py-2 text-black hover:text-white hover:bg-gray-900"
                     >{child.text}</a
@@ -143,7 +143,7 @@
                   {#each menu.children as child}
                     <li class="text-base py-2 text-gray-400 font-normal">
                       <a
-                        href={`${menu.url}/${child.url}`}
+                        href={child.redirectUrl || `${menu.url}/${child.url}`}
                         rel="prefetch"
                         class="h-full w-full inline-block">{child.text}</a
                       >
