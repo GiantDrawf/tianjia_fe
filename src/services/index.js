@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2021-04-13 15:33:59
  * @LastEditors: zhujian
- * @LastEditTime: 2021-05-28 09:37:32
+ * @LastEditTime: 2021-06-22 20:21:24
  * @Description: 你 kin 你擦
  */
 import request from '../utils/request';
@@ -55,4 +55,16 @@ export const getHotArticles = (limit = 10) =>
   request(`${CONST.apiPath}/h5/article/getHotArticles`, {
     data: { limit },
     cache: false,
+  });
+
+/**
+ * 提交消息
+ * @param {Object} payload
+ * @returns
+ */
+export const submitMsg = (payload) =>
+  request(`${CONST.apiPath}/h5/msg/create`, {
+    data: payload,
+    cache: false,
+    type: 'POST',
   });

@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2021-04-08 17:25:00
  * @LastEditors: zhujian
- * @LastEditTime: 2021-05-28 16:30:56
+ * @LastEditTime: 2021-06-23 09:57:35
  * @Description: 你 kin 你擦
  */
 const env = process.env.NODE_ENV;
@@ -88,4 +88,29 @@ const companyInfoMap = [
   },
 ];
 
-export default { pageModuleMap, apiPath, companyInfoMap };
+const contactInfoMap = [
+  {
+    label: '销售地址',
+    value: '江苏省泰兴市华泰大厦8楼',
+  },
+  {
+    label: '生产基地',
+    value: '江苏省泰兴市城北高薪工业园区振兴路12号',
+  },
+  {
+    label: '联系电话',
+    value: '0523-87662206',
+    isPhone: true,
+  },
+  {
+    label: '销售电话',
+    value: '13921745084',
+    isPhone: true,
+  },
+  {
+    label: 'E-mail',
+    value: 'tianjiakongtiao@yeah.net',
+  },
+];
+
+export default { pageModuleMap, apiPath, companyInfoMap, contactInfoMap };
