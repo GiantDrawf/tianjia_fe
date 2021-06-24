@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2021-04-13 16:08:41
  * @LastEditors: zhujian
- * @LastEditTime: 2021-04-13 17:59:17
+ * @LastEditTime: 2021-06-24 14:32:07
  * @Description: 你 kin 你擦
  */
 import createXhr from './createXhr';
@@ -31,13 +31,13 @@ const request = (
       // 对参数进行处理
       const params = [];
 
-      if (typeof data === 'object') {
+      if (typeof data === 'object' && type.toLocaleLowerCase() === 'get') {
         for (const key of Object.keys(data)) {
           params.push(
             `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
           );
         }
-      } else {
+      } else if (type.toLocaleLowerCase() !== 'post') {
         reject(new Error('typeError|data必须为一个对象'));
 
         return;
@@ -63,10 +63,7 @@ const request = (
 
       xhr.open(type, url, async);
       if (type.toLocaleLowerCase() === 'post') {
-        xhr.setRequestHeader(
-          'Content-Type',
-          'application/x-www-form-urlencoded'
-        );
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
       }
       xhr.onreadystatechange = () => {
         if (xhr.readyState === 4) {
@@ -105,7 +102,9 @@ const request = (
           }
         }
       };
-      xhr.send(type.toLocaleLowerCase() === 'get' ? null : params.join('&'));
+      xhr.send(
+        type.toLocaleLowerCase() === 'get' ? null : JSON.stringify(data)
+      );
     }),
     new Promise((_, reject) => {
       setTimeout(() => {

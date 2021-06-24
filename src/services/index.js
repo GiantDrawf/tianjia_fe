@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2021-04-13 15:33:59
  * @LastEditors: zhujian
- * @LastEditTime: 2021-06-22 20:21:24
+ * @LastEditTime: 2021-06-24 14:27:33
  * @Description: 你 kin 你擦
  */
 import request from '../utils/request';
@@ -67,4 +67,16 @@ export const submitMsg = (payload) =>
     data: payload,
     cache: false,
     type: 'POST',
+  });
+
+/**
+ * 查询消息列表
+ * @param {Object} payload
+ * @returns
+ */
+export const queryMsg = (payload) =>
+  request(`${CONST.apiPath}/common/msg/query`, {
+    data: payload,
+    type: 'POST',
+    cache: false,
   });

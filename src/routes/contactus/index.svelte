@@ -22,7 +22,7 @@
       label: '联系人名称',
       name: 'name',
       component: 'input',
-      rules: ['required(请填写联系人名称)', 'len:10(联系人名臣不要超过10个字)'],
+      rules: ['required(请填写联系人名称)', 'len:10(联系人名称不要超过10个字)'],
     },
     {
       label: '手机号',
@@ -36,7 +36,7 @@
     submitMsg({ ...fieldsValue, msgFrom: 'front' }).then((res) => {
       if (res && res.code === 200) {
         alert('成功提交，请耐心等待客服人员联系您~');
-        window.location.reload();
+        window.location.href = '/serviceCenter';
       } else {
         alert('网络异常，请稍后重试！');
       }
