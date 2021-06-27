@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import Container from '../../components/Container.svelte';
   import RightModule from '../../components/RightModule.svelte';
+  import Paginate from '../../components/Paginate.svelte';
   import { queryMsg } from '../../services';
   import { getRandomNum, desensitizationPhoneNumber } from '../../utils';
 
@@ -13,16 +14,43 @@
     pagination: {
       page: 1,
       pageSize: 10,
+      total: 0,
     },
   };
 
-  onMount(() => {
-    queryMsg(query).then((res) => {
+  function getMsg(payload) {
+    queryMsg(payload).then((res) => {
       if (res && res.code === 200) {
         msgList = (res.data && res.data.list) || [];
+        query = {
+          ...query,
+          pagination: {
+            page:
+              (res.data &&
+                res.data.pagination &&
+                res.data.pagination.current) ||
+              1,
+            total:
+              (res.data && res.data.pagination && res.data.pagination.total) ||
+              0,
+            pageSize:
+              (res.data &&
+                res.data.pagination &&
+                res.data.pagination.pageSize) ||
+              10,
+          },
+        };
       }
     });
+  }
+
+  onMount(() => {
+    getMsg(query);
   });
+
+  function handlePageChange(page) {
+    getMsg({ ...query, pagination: { ...query.pagination, page } });
+  }
 </script>
 
 <svelte:head>
@@ -37,7 +65,7 @@
           <!-- 用户问题标题及内容 -->
           <div class="flex flex-row">
             <img
-              class="rounded-full w-10 h-10 overflow-hidden mr-4 mt-2"
+              class="rounded-full w-10 h-10 overflow-hidden mr-4 mt-2 border border-solid border-gray-200"
               src="images/randomAvatar/{`${getRandomNum(1, 10)}`}.png"
               alt="userAvatar"
             />
@@ -75,6 +103,7 @@
           </div>
         </div>
       {/each}
+      <Paginate {...query.pagination} onChange={handlePageChange} />
       {#if msgList.length === 0}
         <div class="w-1/2 mx-auto mt-20 text-center">
           <img class="m-auto" src="images/noMsg.png" alt="nomsg" />

@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2020-12-31 21:08:04
  * @LastEditors: zhujian
- * @LastEditTime: 2021-04-20 16:04:09
+ * @LastEditTime: 2021-06-24 17:30:59
  * @Description: 你 kin 你擦
  */
 module.exports = {
@@ -32,6 +32,7 @@ module.exports = {
       },
       minWidth: {
         0: '0',
+        7: '1.75rem',
         '3/10': '30%',
         '1/4': '25%',
         '1/2': '50%',
