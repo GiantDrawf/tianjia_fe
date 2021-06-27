@@ -25,7 +25,7 @@
       class="flex-grow flex flex-wrap md:pl-10 -mb-10 md:mt-0 mt-10 md:text-left text-center overflow-hidden"
     >
       {#each menus as menu}
-        <div class="lg:w-1/{menus.length} md:w-1/3 w-1/2 text-center">
+        <div class="lg:w-1/6 md:w-1/3 w-1/2 text-center">
           <h2
             class="title-font font-medium text-gray-900 tracking-widest text-base mb-3 hover:text-blue-600"
           >

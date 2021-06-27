@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2020-12-31 21:08:04
  * @LastEditors: zhujian
- * @LastEditTime: 2021-06-27 11:04:48
+ * @LastEditTime: 2021-06-27 11:17:56
  * @Description: 你 kin 你擦
  */
 module.exports = {
@@ -20,9 +20,6 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      width: {
-        '1/6': '16.666667%',
-      },
       left: {
         '1/10': '10%',
       },
