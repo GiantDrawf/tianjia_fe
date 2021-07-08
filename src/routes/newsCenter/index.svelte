@@ -1,5 +1,6 @@
 <script>
-  const mid = 'p8uot90rkhg';
+  import CONST from '../../utils/const.js';
+  const mid = CONST.pageModuleMap['newsCenter'];
   const title = '新闻中心';
 
   import NewsStreamLayout from './NewStreamLayout.svelte';
