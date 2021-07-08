@@ -4,14 +4,18 @@
   import { getHotArticles } from '../services';
   import CONST from '../utils/const';
 
+  export let showHot = true;
+
   let hotArticles = [];
 
   onMount(() => {
-    getHotArticles(6).then((res) => {
-      if (res && res.code === 200) {
-        hotArticles = res.data || [];
-      }
-    });
+    if (showHot) {
+      getHotArticles(6).then((res) => {
+        if (res && res.code === 200) {
+          hotArticles = res.data || [];
+        }
+      });
+    }
   });
 </script>
 

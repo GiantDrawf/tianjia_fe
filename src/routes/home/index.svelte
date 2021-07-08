@@ -15,16 +15,18 @@
 
   onMount(() => {
     // 获取幻灯数据
-    getModuleData({ mid: CONST.pageModuleMap.home.swiper }).then((res) => {
-      if (res && res.code) {
-        slides = (res.data && res.data.moduleContent) || [];
+    getModuleData({ mid: CONST.pageModuleMap.home.swiper, pageSize: 5 }).then(
+      (res) => {
+        if (res && res.code) {
+          slides = (res.data && res.data.moduleContent) || [];
+        }
       }
-    });
+    );
 
     // 获取天佳心选模块数据
     getModuleData({
       mid: CONST.pageModuleMap.home.tjSelected,
-      showLimit: 5,
+      pageSize: 5,
     }).then((res) => {
       if (res && res.code) {
         tjSelected = res.data || {};
@@ -41,7 +43,7 @@
     // 获取商业案例数据
     getModuleData({
       mid: CONST.pageModuleMap.home.businessCase,
-      showLimit: 5,
+      pageSize: 5,
       needAContent: 1,
     }).then((res) => {
       if (res && res.code) {
@@ -52,7 +54,7 @@
     // 获取品牌咨询文章列表数据
     getModuleData({
       mid: CONST.pageModuleMap.home.brandInfo,
-      showLimit: 4,
+      pageSize: 4,
     }).then((res) => {
       if (res && res.code) {
         brandInfos = (res.data && res.data.moduleContent) || [];
@@ -136,7 +138,7 @@
       <TimeLine data={timelineData}>
         <div class="text-center my-6">
           <a
-            href="about"
+            href="/successes/business"
             class="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 mx-auto rounded-lg"
           >
             查看更多
@@ -152,6 +154,14 @@
   <div class="my-10 max-w-full px-4 lg:px-0 md:max-w-5xl mx-auto">
     <ModuleName moduleName="品牌资讯" />
     <NewsStream news={brandInfos} />
+    <div class="text-center my-6">
+      <a
+        href="/newsCenter"
+        class="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 mx-auto rounded-lg"
+      >
+        查看更多
+      </a>
+    </div>
   </div>
 {/if}
 

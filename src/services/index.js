@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2021-04-13 15:33:59
  * @LastEditors: zhujian
- * @LastEditTime: 2021-06-24 14:27:33
+ * @LastEditTime: 2021-07-06 17:45:17
  * @Description: 你 kin 你擦
  */
 import request from '../utils/request';
@@ -10,17 +10,30 @@ import CONST from '../utils/const';
 
 /**
  * @description: 获取模块数据
- * @param {String} mid 模块ID
- * @param {Number} showLimit 限制显示条数
+ * @param {Object} params params
+ * @param {String} params.mid 模块ID
+ * @param {Number} params.page 页码
+ * @param {Number} params.needAContent 是否需要文章内容
+ * @param {Number} params.pageSize 限制条数
+ * @param {String} params.fuzzy 模糊搜索关键词
  * @return {Promise}
  */
-export const getModuleData = ({ mid, showLimit = 0, needAContent = 0 }) =>
+export const getModuleData = ({
+  mid,
+  needAContent = 0,
+  page = 1,
+  pageSize = 10,
+  fuzzy = '',
+}) =>
   request(`${CONST.apiPath}/common/module/getDetail`, {
     data: {
       mid,
-      showLimit,
       needAContent,
+      page,
+      pageSize,
+      fuzzy,
     },
+    type: 'POST',
     cache: false,
   });
 

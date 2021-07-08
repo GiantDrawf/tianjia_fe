@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2021-04-08 17:25:00
  * @LastEditors: zhujian
- * @LastEditTime: 2021-06-23 09:57:35
+ * @LastEditTime: 2021-07-08 16:43:36
  * @Description: 你 kin 你擦
  */
 const env = process.env.NODE_ENV;
@@ -40,7 +40,7 @@ const pageModuleMap = {
     ],
     // 商业案例
     businessCase: isDev ? '9qyoai7w0jp' : 'tpbttao0wao',
-    // 品牌资讯
+    // 新闻中心
     brandInfo: isDev ? 'p8uot90rkhg' : '0l1i829vhd59',
   },
   // 关于天佳模块
@@ -66,6 +66,14 @@ const pageModuleMap = {
       },
     },
   },
+  // 新闻中心
+  newsCenter: isDev ? 'p8uot90rkhg' : '0l1i829vhd59',
+  // 公司新闻
+  companyNews: isDev ? 'fsfny1cnnwc' : '29ijhruarxm',
+  // 公司公告
+  notice: isDev ? 'wh2qwplucw' : 'abroam34kx9',
+  // 行业新闻
+  industryNews: isDev ? '1qytd0udixdj' : 'vwx3r6ao3wm',
 };
 
 const apiPath = isDev ? 'http://localhost:7001' : 'https://api.tianjia.live';

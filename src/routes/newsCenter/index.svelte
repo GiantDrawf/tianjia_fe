@@ -1,5 +1,8 @@
-<svelte:head>
-  <title>新闻中心-天佳空调-风机箱-组合式空调箱</title>
-</svelte:head>
+<script>
+  const mid = 'p8uot90rkhg';
+  const title = '新闻中心';
 
-<h1>新闻中心</h1>
+  import NewsStreamLayout from './NewStreamLayout.svelte';
+</script>
+
+<NewsStreamLayout {mid} {title} />
