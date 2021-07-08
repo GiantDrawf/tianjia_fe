@@ -8,7 +8,6 @@
   import Paginate from '../../components/Paginate.svelte';
   import InfoFlow from '../../components/InfoFlow.svelte';
   import { getModuleData } from '../../services';
-  import { onMount } from 'svelte';
 
   let pagination = {
     page: 1,
@@ -18,7 +17,12 @@
   let newsList = [];
   let loading = false;
 
-  function getListData({ page = 1, pageSize = 10, fuzzy = '' } = {}) {
+  function getListData({
+    mid = mid,
+    page = 1,
+    pageSize = 10,
+    fuzzy = '',
+  } = {}) {
     if (!loading && mid) {
       loading = true;
       getModuleData({ mid, page, pageSize, fuzzy })
@@ -41,18 +45,18 @@
 
   function onSearch(val) {
     if (val) {
-      getListData({ fuzzy: val, page: 1 });
+      getListData({ mid, fuzzy: val, page: 1 });
     } else {
-      getListData();
+      getListData({ mid });
     }
   }
 
-  onMount(() => {
-    getListData({ ...pagination });
-  });
+  $: {
+    getListData({ mid });
+  }
 
   function handlePageChange(page) {
-    getListData({ ...pagination, page });
+    getListData({ mid, ...pagination, page });
   }
 </script>
 
