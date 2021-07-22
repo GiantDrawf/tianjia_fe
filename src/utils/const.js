@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2021-04-08 17:25:00
  * @LastEditors: zhujian
- * @LastEditTime: 2021-07-08 16:43:36
+ * @LastEditTime: 2021-07-22 11:38:18
  * @Description: 你 kin 你擦
  */
 const env = process.env.NODE_ENV;
@@ -74,6 +74,28 @@ const pageModuleMap = {
   notice: isDev ? 'wh2qwplucw' : 'abroam34kx9',
   // 行业新闻
   industryNews: isDev ? '1qytd0udixdj' : 'vwx3r6ao3wm',
+  // 招聘信息
+  recruit: isDev ? 'gy0zq2qbofg' : 'vnn4wbplbs',
+  // 全职岗位
+  fulltime: isDev ? 'fbpnn82twjg' : '0o02grs6p71',
+  // 兼职岗位
+  parttime: isDev ? 'wwx8u2db4o' : 'kl0yvg844',
+  // 实习岗位
+  internship: isDev ? '6ag2c3epqx6' : 'towewa4x2l',
+  // 产品中心
+  products: isDev ? 'msw4lm2gha7' : '2baufdpaadq',
+  // 商用空调
+  commercial: isDev ? 'wjuoeudhvx9' : '20j6l081ksp',
+  // 特种空调
+  specialType: isDev ? 'x2idvhasetg' : 'g1al4qnaj3e',
+  // 成功案例
+  successes: isDev ? '9qyoai7w0jp' : 'tpbttao0wao',
+  // 商业案例
+  business: isDev ? 'plz8bok5q9' : '2m8n1fm8435',
+  // 工业案例
+  industrial: isDev ? '9u6evcf6m4u' : 'usclup0uy0j',
+  // 家用案例
+  household: isDev ? 'xrxcygw7rb' : 'jxnxhh0ujwn',
 };
 
 const apiPath = isDev ? 'http://localhost:7001' : 'https://api.tianjia.live';

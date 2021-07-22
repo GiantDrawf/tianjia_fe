@@ -12,7 +12,7 @@
     let title = '';
     try {
       title = menus
-        .filter((itemMenu) => itemMenu.url === 'newsCenter')[0]
+        .filter((itemMenu) => itemMenu.url === 'successes')[0]
         .children.filter((itemChild) => slug === itemChild.url)[0].text;
     } catch (e) {
       console.log(e);
@@ -26,10 +26,9 @@
 </script>
 
 <script>
+  import PageLayout from './layout.svelte';
   export let mid;
   export let title;
-
-  import NewsStreamLayout from '../../components/NewStreamLayout.svelte';
 </script>
 
-<NewsStreamLayout {mid} {title} />
+<PageLayout {title} {mid} />

@@ -1,8 +1,10 @@
 <script>
   // 信息流组件
   import cn from 'classnames';
+  import EmptyStatus from './EmptyStatus.svelte';
 
   export let data = [];
+  export let emptyText = '暂无新闻';
 </script>
 
 <div class="divide-y">
@@ -25,7 +27,12 @@
           >
             <img
               src={itemNew.thumbnail}
-              class="block transition-all duration-700"
+              class={cn(
+                'block',
+                'transition-all',
+                'duration-700',
+                itemNew.isTop ? '' : 'h-full'
+              )}
               alt={itemNew.title}
             />
           </div>
@@ -48,12 +55,7 @@
     </a>
   {/each}
   {#if data.length === 0}
-    <div class="w-1/2 mx-auto mt-20 text-center">
-      <img class="m-auto" src="images/noMsg.png" alt="nomsg" />
-      <p class="text-gray-400 text-lg">
-        暂无新闻，<a class="text-blue-400" href="/home">回到首页</a>
-      </p>
-    </div>
+    <EmptyStatus {emptyText} />
   {/if}
 </div>
 

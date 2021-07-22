@@ -1,5 +1,8 @@
-<svelte:head>
-  <title>成功案例-天佳空调-风机箱-组合式空调箱</title>
-</svelte:head>
+<script>
+  import PageLayout from './layout.svelte';
+  import CONST from '../../utils/const.js';
+  const mid = CONST.pageModuleMap['successes'];
+  let title = '成功案例';
+</script>
 
-<h1>成功案例</h1>
+<PageLayout {title} {mid} />

@@ -5,7 +5,7 @@
   import { getModuleData, getArticleData } from '../../services';
   import CONST from '../../utils/const';
   import ImportSvg from '../../components/ImportSvg.svelte';
-  import TimeLine from '../../components/TimeLine.svelte';
+  import TimeLine from '../../components/TimeLine/TimeLine.svelte';
   import NewsStream from '../../components/NewsStream.svelte';
   let slides = [];
   let tjSelected;

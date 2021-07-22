@@ -25,12 +25,12 @@
     bind:value={searchValue}
   />
   <div
-    class="absolute w-9 h-9 bg-search-icon bg-center bg-no-repeat bg-1 z-50 top-1/2 right-1 -mt-4.5 cursor-pointer"
+    class="absolute w-9 h-9 bg-search-icon bg-center bg-no-repeat bg-1 top-1/2 right-1 -mt-4.5 cursor-pointer"
     on:click={() => onSearch(searchValue)}
   />
   {#if searchValue}
     <div
-      class="absolute w-9 h-9 bg-close-icon bg-center bg-no-repeat bg-1 z-50 top-1/2 right-6 -mt-4.5 cursor-pointer"
+      class="absolute w-9 h-9 bg-close-icon bg-center bg-no-repeat bg-1 top-1/2 right-6 -mt-4.5 cursor-pointer"
       on:click={clearVal}
     />
   {/if}

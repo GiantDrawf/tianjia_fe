@@ -12,7 +12,7 @@
     let title = '';
     try {
       title = menus
-        .filter((itemMenu) => itemMenu.url === 'newsCenter')[0]
+        .filter((itemMenu) => itemMenu.url === 'recruit')[0]
         .children.filter((itemChild) => slug === itemChild.url)[0].text;
     } catch (e) {
       console.log(e);
@@ -32,4 +32,4 @@
   import NewsStreamLayout from '../../components/NewStreamLayout.svelte';
 </script>
 
-<NewsStreamLayout {mid} {title} />
+<NewsStreamLayout {mid} {title} emptyText="暂无{title}" />

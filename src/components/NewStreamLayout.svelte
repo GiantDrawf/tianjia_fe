@@ -1,13 +1,14 @@
 <script>
   export let mid;
   export let title = '';
+  export let emptyText;
 
-  import Container from '../../components/Container.svelte';
-  import RightModule from '../../components/RightModule.svelte';
-  import SearchInput from '../../components/SearchInput.svelte';
-  import Paginate from '../../components/Paginate.svelte';
-  import InfoFlow from '../../components/InfoFlow.svelte';
-  import { getModuleData } from '../../services';
+  import Container from './Container.svelte';
+  import RightModule from './RightModule.svelte';
+  import SearchInput from './SearchInput.svelte';
+  import Paginate from './Paginate.svelte';
+  import InfoFlow from './InfoFlow.svelte';
+  import { getModuleData } from '../services';
 
   let pagination = {
     page: 1,
@@ -71,7 +72,7 @@
         <div class="flex flex-row-reverse items-center">
           <SearchInput {onSearch} />
         </div>
-        <InfoFlow data={newsList} />
+        <InfoFlow data={newsList} {emptyText} />
         <Paginate {...pagination} onChange={handlePageChange} />
       </div>
       <RightModule showHot={false} />

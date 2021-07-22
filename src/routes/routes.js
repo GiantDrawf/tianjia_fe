@@ -2,7 +2,7 @@
  * @Author: zhujian1995@outlook.com
  * @Date: 2021-04-08 14:43:44
  * @LastEditors: zhujian
- * @LastEditTime: 2021-05-31 10:21:15
+ * @LastEditTime: 2021-07-21 11:31:31
  * @Description: 路由管理
  */
 const env = process.env.NODE_ENV;
@@ -81,7 +81,6 @@ export default [
   },
   {
     url: 'successes',
-    redirectUrl: 'successes/business',
     text: '成功案例',
     children: [
       {
