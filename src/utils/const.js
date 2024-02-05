@@ -1,8 +1,8 @@
 /*
  * @Author: zhujian1995@outlook.com
  * @Date: 2021-04-08 17:25:00
- * @LastEditors: zhujian
- * @LastEditTime: 2021-07-22 11:38:18
+ * @LastEditors: zhujian1995@outlook.com
+ * @LastEditTime: 2024-02-05 10:43:42
  * @Description: 你 kin 你擦
  */
 const env = process.env.NODE_ENV;
@@ -98,7 +98,7 @@ const pageModuleMap = {
   household: isDev ? 'xrxcygw7rb' : 'jxnxhh0ujwn',
 };
 
-const apiPath = isDev ? 'http://localhost:7001' : 'https://api.tianjia.live';
+const apiPath = isDev ? 'http://localhost:7001' : 'http://api.tianjia.live';
 
 const companyInfoMap = [
   {
